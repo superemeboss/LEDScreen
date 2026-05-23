@@ -61,4 +61,4 @@ Open that link on Android Chrome. Use Chrome's menu to choose `Add to Home scree
 
 ## Android APK
 
-An Android WebView wrapper project is included in the `android/` folder. Building the APK requires Android Studio or Gradle with Android build tools installed.
+An Android WebView wrapper project is included in the `android/` folder. Building the APK requires Android Studio or Gradle with Android build tools installed.   
