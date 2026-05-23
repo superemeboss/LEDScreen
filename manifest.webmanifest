@@ -1,0 +1,10 @@
+{
+  "name": "DigiArt LED Screen",
+  "short_name": "DigiArt LED",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "fullscreen",
+  "background_color": "#07090d",
+  "theme_color": "#07090d",
+  "orientation": "any"
+}

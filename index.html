@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#07090d">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>DigiArt LED Screen Emulator</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="easel" aria-label="LED drawing easel emulator">
+        <div class="screen-wrap">
+          <div id="ledGrid" class="led-grid" aria-label="Interactive LED dot screen"></div>
+        </div>
+
+        <button class="menu-button" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
+        <div class="menu-scrim" id="menuScrim"></div>
+
+        <aside class="menu-drawer" id="menuDrawer" aria-label="Controls menu">
+          <div class="top-bar">
+            <button class="power-button" id="powerBtn" type="button" aria-pressed="true">Power</button>
+            <div class="brand-lockup">
+              <span class="brand-mark">LED</span>
+              <div>
+                <h1>DigiArt Screen</h1>
+                <p id="statusText">Choose an activity.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="screen-footer">
+            <span id="modeLabel">Free Draw</span>
+            <span id="selectionLabel">Drag lights to draw.</span>
+          </div>
+
+          <div class="grid-settings" aria-label="Grid size">
+            <label>
+              Horizontal LEDs
+              <input id="colsInput" type="number" min="3" max="40" value="21">
+            </label>
+            <label>
+              Vertical LEDs
+              <input id="rowsInput" type="number" min="3" max="40" value="13">
+            </label>
+            <button type="button" id="applyGridBtn">Apply grid</button>
+          </div>
+
+          <div class="control-panel">
+            <div class="letter-bank" aria-label="Letter buttons"></div>
+
+            <div class="activity-bank" aria-label="Activity buttons">
+              <button type="button" data-mode="numbers">123</button>
+              <button type="button" data-mode="objects">Objects</button>
+              <button type="button" data-mode="shapes">Shapes</button>
+              <button type="button" data-mode="guess">Guess</button>
+              <button type="button" data-mode="free" class="active">Free</button>
+            </div>
+
+            <div class="nav-bank" aria-label="Navigation and settings">
+              <button type="button" id="leftBtn" aria-label="Previous">&lt;</button>
+              <button type="button" id="okBtn">OK</button>
+              <button type="button" id="rightBtn" aria-label="Next">&gt;</button>
+              <button type="button" id="undoBtn">Undo</button>
+              <button type="button" id="clearBtn">Clear</button>
+              <button type="button" id="musicBtn" aria-pressed="true">Music</button>
+              <button type="button" id="volDownBtn" aria-label="Volume down">Vol -</button>
+              <button type="button" id="volUpBtn" aria-label="Volume up">Vol +</button>
+              <button type="button" id="brightBtn">Bright</button>
+              <button type="button" id="bgBtn" aria-pressed="false">White bg</button>
+            </div>
+          </div>
+
+          <div class="meters" aria-label="Audio and brightness status">
+            <span id="volumeMeter">Vol 3</span>
+            <span id="brightnessMeter">Bright 3</span>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
