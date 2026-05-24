@@ -230,6 +230,7 @@ function paintDot(dot, allowHoldClear) {
 
   const expected = state.guide[state.guideIndex];
   if (expected && key(expected[0], expected[1]) === dotKey) {
+    if (!state.lit.has(dotKey)) vibrateLed();
     state.lit.add(dotKey);
     state.guideIndex += 1;
     chirp(520);
@@ -252,11 +253,17 @@ function setDot(dotKey, on, track) {
   const had = state.lit.has(dotKey);
   if (on) state.lit.add(dotKey);
   else state.lit.delete(dotKey);
+  if (on && !had) vibrateLed();
   if (track && had !== on) {
     state.history.push({ dotKey, wasOn: had });
     state.history = state.history.slice(-MAX_UNDO);
   }
   update();
+}
+
+function vibrateLed() {
+  if (!state.powered || !navigator.vibrate) return;
+  navigator.vibrate(12);
 }
 
 function clampGridSize(value, fallback) {
